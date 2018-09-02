@@ -1,0 +1,31 @@
+{% extends 'base.html'%}
+{% block styles %}
+{{ super() }}
+<link rel="stylesheet" href="{{ url_for('static',filename='css/articles.css')}}">
+<script type="text/javascript" src="{{ url_for('static',filename='js/articles.js')}}"></script>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1 style="text-align:center; color:purple">News Articles from {{ name }}</h1>
+    <ul>
+        {% for article in news %}
+
+        <figure class="snip1336" style="height:700px; width:500px">
+            <img src="{{article.urlToImage}}" alt="" />
+            <figcaption>
+                <h2 style="font-size:20px">{{article.author}}</h2>
+                <h2 class="follow" style="font-size:10px">{{article.title|truncate(150)}}</h2>
+                <hr>
+                <p>{{article.description|truncate(150)}}<br>
+                    <span class="follow" style="font-size:10px">{{article.date}}</span>
+                </p>
+                <a href="{{article.url}}" class="info">Read More</a>
+            </figcaption>
+        </figure>
+
+        {% endfor %}
+    </ul>
+</div>
+
+{% endblock %}
