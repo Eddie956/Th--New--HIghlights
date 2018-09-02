@@ -3,7 +3,6 @@ from . import main
 from ..request import get_sources, get_articles
 from ..models import Sources
 
-
 @main.route('/')
 def index():
     title = "Welcome to the News page."
@@ -13,11 +12,9 @@ def index():
     business = get_sources('business')
     health = get_sources('health')
     entertainment = get_sources('entertainment')
-    sports = get_sources('sports')
+    sports =get_sources('sports')
 
-    return render_template('index.html', title=title, general=general, technology=technology, business=business, health=health, entertainment=entertainment, sports=sports
-                           )
-
+    return render_template('index.html',title = title, general = general, technology = technology, business = business, health = health, entertainment = entertainment, sports = sports)
 
 @main.route('/articles/<source_id>')
 def articles(source_id):
@@ -26,4 +23,4 @@ def articles(source_id):
     '''
     news_source = get_articles(source_id)
     title = 'Articles | News Articles'
-    return render_template('articles.html', title=title, name=source_id, news=news_source)
+    return render_template('articles.html', title = title, name = source_id, news = news_source)

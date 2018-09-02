@@ -1,0 +1,16 @@
+{% macro displayCategoryList(categories) %}
+{% for category in categories %}
+
+<figure class="snip1336" style="height:270px">
+    <figcaption>
+        <h2>{{ category.name}}</h2>
+        <hr>
+        <!-- <h6><span style="font-size:5px">Country: {{ category.country }} || Language: {{ category.language }}</span></h6> -->
+        <p style="font-size:10px">{{ category.description|truncate(200)}}</p>
+        <a href="{{ category.url }}" class="follow">Visit Site</a>
+        <a href="/articles/{{ category.id }}" class="info">View Articles</a>
+    </figcaption>
+</figure>
+
+{% endfor %}
+{% endmacro %}
