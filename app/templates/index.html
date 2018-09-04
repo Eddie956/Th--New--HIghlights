@@ -9,43 +9,45 @@
 {% endblock %}
 
 {% block content %}
-<div id="general" class="container" style="background-color: grey;">
+<div class="container" style="background-image: url({{ url_for('static', filename='image/kl.jpg')}})">
+<div id="general" class="container">
     <h1 style="text-align:center; color:white">General News</h1>
     <ul>
         {{ macro.displayCategoryList(general) }}
     </ul>
 </div>
-<div id="tech" class="container">
-    <h1 style="text-align:center; color:white" style="background-color: grey";>Technology News</h1>
+<div id="technology" class="container">
+    <h1 style="text-align:center; color:white">Technology News</h1>
     <ul>
       {{ macro.displayCategoryList(technology) }}
     </ul>
   </div>
-  <div id = "tech" class="container">
-        <h1 style="text-align:center; color:white" style="background-color: grey;">Business. News</h1>
+  <div id = "business" class="container">
+        <h1 style="text-align:center; color:white">Business. News</h1>
     <ul>
       {{ macro.displayCategoryList(business) }}
     </ul>
   </div>
-  <div id = "technology" class="container" style="background-color:  grey;">
-    <h1 style=" text-align:center;
+  <div id = "health" class="container">
+    <h1 style="
             color:white">Health. News</h1>
         <ul>
             {{ macro.displayCategoryList(health) }}
         </ul>
 </div>
-<div id="tech" class="container" style="background-color:  grey;">
+<div id="entertainment" class="container">
     <h1 style=" text-align:center; color:white">Entertainment.
     News</h1>
     <ul>
         {{ macro.displayCategoryList(entertainment) }}
     </ul>
 </div>
-<div id="tech" class="container" style="background-color: grey;">
+<div id="sports" class="container">
     <h1 style=" text-align:center; color:white">Sports.
     News</h1>
     <ul>
         {{ macro.displayCategoryList(sports) }}
     </ul>
+</div>
 </div>
 {% endblock %}
